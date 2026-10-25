@@ -162,10 +162,10 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"auth.ok.full": "确认授权并全面浏览",
 			"auth.ok.env": "确认授权并打开环境适配",
 			"envGate.title": "环境还没配好",
-			"envGate.lead": "红队模式发送前需要本机工具。未检测到可用环境时，先去环境适配，或确认暂不配置。",
-			"envGate.kaliHint": "检测到 Kali 时会直接用本机工具，不必填路径。没有 Kali 时，在环境适配里填写各工具路径，或选一个整包文件夹自动分配。",
+			"envGate.lead": "",
+			"envGate.kaliHint": "",
 			"envGate.skip": "暂不配置",
-			"envGate.skipConfirm": "确认后这次可以继续对话。扫描和利用类技能仍会因为缺少工具而不可用，之后可以在 dsh-purge → 环境适配里补路径。",
+			"envGate.skipConfirm": "",
 			"envGate.skipNo": "返回",
 			"envGate.skipYes": "确认暂不配置",
 			"envGate.go": "去环境适配",
@@ -174,8 +174,8 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"theme.ink": "墨",
 			"purge.title": "补丁",
 			"override.title": "提示词",
-			"own.title": "本地靶场",
-			"own.hint": "开源版攻击任务只放行本机/内网 IP。域名会先解析，解析到的每一个地址都必须是私网或回环；hosts 把 .lab 指到公网 IP 也会拦。解析失败或混有公网地址一律拦截。",
+			"own.title": "",
+			"own.hint": "",
 			"own.save": "保存名单",
 			"saved.own": "已保存自己的服务器",
 			"saved.own.dropped": "已保存。有 {n} 行不是单个 IP 或主机名，已丢掉",
@@ -189,7 +189,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"metric.shim.na": "本端不需要",
 			"metric.bak.yes": "有备份",
 			"metric.bak.no": "无备份",
-			"metric.bak.hint": "备份",
+			"metric.bak.hint": "",
 			"table.patch": "项目",
 			"table.status": "状态",
 			"status.applied": "已应用",
@@ -197,12 +197,12 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"status.pending": "待应用",
 			"status.unmatched": "没对上",
 			"status.skipped": "跳过",
-			"apply.hint": "没改提示词框不用点保存，默认就是这份，启动和应用会写进 prompt-inject.md。只有自己改过再点保存才会覆盖。点应用打补丁。待应用=原文还在。跳过=当前版本不需要或组件未安装。",
+			"apply.hint": "",
 			"warn.noRoot": "未定位到当前宿主的 @deepseek-ai，清洗不会生效。请完全退出后再打开本宿主，在本页点「应用」。桌面端安装目录可以是任意盘符；目录名带 DeepseekHarness / DeepSeek Harness 均可。",
 			"warn.noRoot.desktop": "官方客户端的代码在 app.asar 里。点「应用」会解开并自动重启，不用另跑脚本。若一直显示还没定位，先完全退出客户端再开，再点「应用」。第三方 DSH Desktop 直接点「应用」。",
 			"unpack.restarting": "补丁已写入。点「重启」后客户端会自己重新打开。",
 			"restart.fullQuit": "正在重启，客户端会自己重新打开。",
-			"warn.noInject": "官方始终用默认提示词。红队开了规则集就只用规则集；没开时用去掉 CTF 的默认提示词，再接红队操作。两边都空会提示必须添加。",
+			"warn.noInject": "",
 			"need.prompt": "提示词和规则集都是空的，必须先添加提示词，或启用一条有内容的规则集。",
 			"btn.restoreInject": "恢复默认",
 			"saved.restoreInject": "已恢复默认提示词",
@@ -280,11 +280,11 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"policy.strict": "严格",
 			"policy.fallback": "空位兜底",
 			"policy.always": "总是允许",
-			"policy.hint": "严格：永远剥 AGENTS.md / CLAUDE.md；空位兜底：提示词框为空时才用；总是允许：保留 DSH 原生行为",
+			"policy.hint": "",
 			"cwd.title": "本地规则（当前目录）",
 			"cwd.empty": "当前目录没有 AGENTS.md / CLAUDE.md",
 			"cwd.rescan": "重新扫描",
-			"cwd.hint": "只有提示词框为空时，被勾选的本地文件才作为兜底注入；提示词框一旦非空就不会用这些文件。",
+			"cwd.hint": "",
 			"cwd.scope.cwd": "当前目录",
 			"cwd.scope.ancestor": "上级",
 			"cwd.scope.root": "项目根",
@@ -301,8 +301,8 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"ph.content": "",
 			"btn.saveRule": "保存",
 			"skills.title": "Skill",
-			"skills.hint": "导入到官方目录后，由 DSH 调用：聊天输入 /名称 立即加载；任务对上 description 或 whenToUse 时模型会调 skill 工具。正文写「激活」不会触发。",
-			"skills.hint.desktop": "当前桌面宿主的官方 Skill 目录。聊天输入 /名称 立即加载；任务对上 description 时模型会调 skill 工具。",
+			"skills.hint": "",
+			"skills.hint.desktop": "",
 			"skills.empty": "暂无用户 Skill",
 			"btn.importZip": "导入压缩包",
 			"btn.importFolder": "导入文件夹",
@@ -316,7 +316,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"skills.call.model": "模型可调",
 			"skills.call.modelOff": "模型不可调",
 			"skills.call.userOff": "不可 /名称",
-			"ph.skill.desc": "description（何时用）",
+			"ph.skill.desc": "",
 			"btn.saveSkill": "保存",
 			"need.skill.id": "id 必须是 kebab-case，例如 code-review",
 			"confirm.delete.skill": "从官方 $DSH_HOME/skills 删除 {id}？宿主会自动从目录拿掉。",
@@ -446,15 +446,15 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"rewind.empty": "没有可回退的上一句",
 			"rewind.fail": "回退失败: {error}",
 			"rewind.once": "回退上一步",
-					"rewind.once.hint": "撤回最后一步已进行的对话，新会话接上之前的上下文；那句回到输入框再发送",
+					"rewind.once.hint": "",
 			"rewind.round": "回退上一轮",
-					"rewind.round.hint": "撤回上一整轮（含子代理）已进行的对话，新会话接上之前的上下文；那句回到输入框再发送",
+					"rewind.round.hint": "",
 			"hooksDeny.title": "Hooks 拦截",
 			"hooksDeny.bypass": "放行 hooks 的 deny / ask（补丁 30 / 31 / 64 / 65）",
-			"hooksDeny.hint": "关掉后，用户自己的 PreToolUse / UserPromptSubmit / Stop hook 的 deny 会按官方逻辑生效。官方 ask 分支本身是空操作，关开关不会弹出审批框。改完后点「应用」并重启才写进宿主。",
+			"hooksDeny.hint": "",
 			"saved.hooksDeny": "已保存",
 			"continue.title": "失败重试 / 继续",
-			"continue.hint": "请求失败会自动重试；异常停止或中断可点「继续」或自动续跑。自己点停止不会自动继续。次数用完后需新开一轮。",
+			"continue.hint": "",
 			"continue.autoRetry": "失败自动重试",
 			"continue.retryMax": "重试次数",
 			"continue.autoContinue": "中断后自动继续",
@@ -506,10 +506,10 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"auth.ok.full": "Authorize and open Full view",
 			"auth.ok.env": "Authorize and open Env adapt",
 			"envGate.title": "Environment is not ready",
-			"envGate.lead": "Red team mode needs local tools before you send. If none are available, open Env adapt or confirm you will continue without them.",
-			"envGate.kaliHint": "When Kali is detected, local tools are used directly and paths are optional. Otherwise set each tool path in Env adapt, or pick one toolkit folder to assign them.",
+			"envGate.lead": "",
+			"envGate.kaliHint": "",
 			"envGate.skip": "Skip for now",
-			"envGate.skipConfirm": "You can keep chatting after this. Scan and exploit skills stay unavailable until the tools are installed. You can add paths later under dsh-purge → Env adapt.",
+			"envGate.skipConfirm": "",
 			"envGate.skipNo": "Back",
 			"envGate.skipYes": "Continue without tools",
 			"envGate.go": "Open Env adapt",
@@ -518,8 +518,8 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"theme.ink": "Ink",
 			"purge.title": "Patches",
 			"override.title": "Prompt",
-			"own.title": "Local lab only",
-			"own.hint": "The open-source build only allows localhost/private IPs. Domains are resolved first; every A/AAAA must be loopback or RFC1918. A hosts entry that points .lab at a public IP is blocked. Failed or mixed public answers are denied.",
+			"own.title": "",
+			"own.hint": "",
 			"own.save": "Save list",
 			"saved.own": "Own servers saved",
 			"saved.own.dropped": "Saved. {n} lines were not a single IP or hostname and were dropped",
@@ -533,7 +533,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"metric.shim.na": "Not needed here",
 			"metric.bak.yes": "Backup",
 			"metric.bak.no": "No backup",
-			"metric.bak.hint": "Backup",
+			"metric.bak.hint": "",
 			"table.patch": "Item",
 			"table.status": "Status",
 			"status.applied": "Applied",
@@ -541,12 +541,12 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"status.pending": "Pending",
 			"status.unmatched": "No match",
 			"status.skipped": "Skipped",
-			"apply.hint": "If you did not edit the prompt box, do not save. The default is already used and is written to prompt-inject.md on start/apply. Save only after you change it. Apply writes host patches. Pending = original text still present. Skipped = not needed for this version or the component is not installed.",
+			"apply.hint": "",
 			"warn.noRoot": "Could not find this host’s @deepseek-ai tree, so Apply will not patch anything. Fully quit and reopen this host, then Apply here. Desktop may live on any drive; folder names like DeepseekHarnessDesktop or DeepSeek Harness are fine.",
 			"warn.noRoot.desktop": "Official Harness keeps its code in app.asar. Apply unpacks it and restarts the app. If this page stays “not found”, fully quit the client, reopen it, then Apply again. Third-party DSH Desktop: just Apply.",
 			"unpack.restarting": "Patches are written. Click Restart and the client opens again by itself.",
 			"restart.fullQuit": "Restarting. The client will open again by itself.",
-			"warn.noInject": "Official mode always uses the default prompt. Red team uses only the active rule set; otherwise it uses the default prompt without the CTF section, then the red team steps. If both are empty you will be asked to add a prompt.",
+			"warn.noInject": "",
 			"need.prompt": "Both the prompt and the rule set are empty. Add a prompt, or enable a rule that has content.",
 			"btn.restoreInject": "Reset default",
 			"saved.restoreInject": "Default prompt restored",
@@ -624,11 +624,11 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"policy.strict": "Strict",
 			"policy.fallback": "Fallback",
 			"policy.always": "Always on",
-			"policy.hint": "Strict: always strip AGENTS.md / CLAUDE.md. Fallback: use workspace files only when the prompt box is empty. Always on: keep DSH default behavior.",
+			"policy.hint": "",
 			"cwd.title": "Local rules (current folder)",
 			"cwd.empty": "No AGENTS.md / CLAUDE.md in this folder",
 			"cwd.rescan": "Rescan",
-			"cwd.hint": "Checked files are injected only when the prompt box is empty. A non-empty prompt box always wins.",
+			"cwd.hint": "",
 			"cwd.scope.cwd": "cwd",
 			"cwd.scope.ancestor": "ancestor",
 			"cwd.scope.root": "project root",
@@ -645,8 +645,8 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"ph.content": "",
 			"btn.saveRule": "Save",
 			"skills.title": "Skills",
-			"skills.hint": "After import, DSH calls it: type /name in chat to load now; the model calls the skill tool when the task matches description or whenToUse. Writing「激活」in the body does nothing.",
-			"skills.hint.desktop": "This desktop host’s official skill catalog. Type /name in chat to load; the model calls the skill tool when the task matches the description.",
+			"skills.hint": "",
+			"skills.hint.desktop": "",
 			"skills.empty": "No user skills",
 			"btn.importZip": "Import zip",
 			"btn.importFolder": "Import folder",
@@ -660,7 +660,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"skills.call.model": "Model can load",
 			"skills.call.modelOff": "Hidden from model",
 			"skills.call.userOff": "/name disabled",
-			"ph.skill.desc": "description (when to use)",
+			"ph.skill.desc": "",
 			"btn.saveSkill": "Save",
 			"need.skill.id": "id must be kebab-case, e.g. code-review",
 			"confirm.delete.skill": "Delete {id} from official $DSH_HOME/skills? The host will drop it from the catalog.",
@@ -790,15 +790,15 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"rewind.empty": "Nothing to undo",
 			"rewind.fail": "Undo failed: {error}",
 			"rewind.once": "Undo last step",
-					"rewind.once.hint": "Withdraw the last step into a new session that keeps earlier context; the line returns to the box",
+					"rewind.once.hint": "",
 			"rewind.round": "Undo last turn",
-					"rewind.round.hint": "Withdraw the last turn (and its subagents) into a new session that keeps earlier context; the line returns to the box",
+					"rewind.round.hint": "",
 			"hooksDeny.title": "Hook interception",
 			"hooksDeny.bypass": "Bypass hook deny / ask (patches 30 / 31 / 64 / 65)",
-			"hooksDeny.hint": "When off, your own PreToolUse / UserPromptSubmit / Stop hook deny runs as the official host wrote it. The official ask branch is a no-op; turning this off will not show an approval dialog. Click Apply and restart to write the host files.",
+			"hooksDeny.hint": "",
 			"saved.hooksDeny": "Saved",
 			"continue.title": "Retry / Continue",
-			"continue.hint": "Failed requests auto-retry. After an abnormal stop or interrupt, use Continue or auto-resume. A manual stop never auto-continues. Counts reset after a completed turn.",
+			"continue.hint": "",
 			"continue.autoRetry": "Auto-retry on failure",
 			"continue.retryMax": "Retry count",
 			"continue.autoContinue": "Auto-continue after interrupt",
@@ -1260,7 +1260,6 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 					h("h4", null, t("hooksDeny.title")),
 					noticeNode(notice),
 				),
-				h("p", { className: "dshp-hint", style: { margin: "0 0 4px", color: "var(--dshp-mute)", fontSize: 12 } }, t("hooksDeny.hint")),
 				h("div", { className: "dshp-cr-row" },
 					h("label", null,
 						h("input", {
@@ -1317,7 +1316,6 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 					h("h4", null, t("continue.title")),
 					noticeNode(notice),
 				),
-				h("p", { className: "dshp-hint", style: { margin: "0 0 4px", color: "var(--dshp-mute)", fontSize: 12 } }, t("continue.hint")),
 				h("div", { className: "dshp-cr-row" },
 					h("label", null,
 						h("input", {
@@ -2008,9 +2006,7 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 						),
 					),
 				) : null,
-				h("p", { className: "dshp-hint", style: { margin: "8px 0 0", color: "var(--dshp-mute)", fontSize: 12 } }, t("apply.hint")),
 				s && !s.ai_base ? h("p", { className: "dshp-hint", style: { margin: "8px 0 0", color: "var(--dshp-danger, #c44)", fontSize: 12 } }, hostText(t, "warn.noRoot", hostSurface)) : null,
-				s && s.ai_base && s.override_status === "missing" ? h("p", { className: "dshp-hint", style: { margin: "8px 0 0", color: "var(--dshp-mute)", fontSize: 12 } }, t("warn.noInject")) : null,
 				askRestart ? h(RestartAsk, {
 					t: t,
 					theme: detectHostTheme(),
@@ -2025,23 +2021,28 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 					},
 				}) : null,
 				// h(ContinueRetrySection, null),
-				h("div", { className: "dshp-sub" },
-					h("h4", null, t("override.title")),
-					h("div", { className: "dshp-row", style: { margin: 0 } },
-						h(Btn, { tiny: true, onClick: () => { try { const f = document.querySelector('iframe[data-promptlib="1"]'); if (f) f.src = "/dsh-purge/prompts/ui?t=" + Date.now(); } catch { /* ignore */ } } }, "刷新"),
-						h(Btn, { tiny: true, onClick: () => { try { window.open("/dsh-purge/prompts/ui", "_blank"); } catch { /* ignore */ } } }, "独立窗口"),
-					),
-				),
-				h("iframe", {
-					"data-promptlib": "1",
-					src: "/dsh-purge/prompts/ui",
-					title: "提示词库",
-					style: { width: "100%", height: 560, border: 0, borderRadius: 10, display: "block" },
-				}),
-				h("div", { className: "dshp-sub" },
-					h("h4", null, t("own.title")),
-				),
-				h("p", { className: "dshp-hint", style: { margin: "8px 0 0", color: "var(--dshp-mute)", fontSize: 12 } }, t("own.hint")),
+	h("div", { className: "dshp-sub", style: { display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" } },
+		h("h4", { style: { margin: 0 } }, t("override.title")),
+		h("div", { style: { marginLeft: "auto", display: "flex", gap: 6 } },
+			h(Btn, { tiny: true, onClick: () => { try { const f = document.querySelector('iframe[data-promptlib="1"]'); if (f) f.src = "/dsh-purge/prompts/ui?t=" + Date.now(); } catch (e) {} } }, "刷新"),
+			h(Btn, { tiny: true, onClick: () => {
+				const url = (location.origin || ("http://127.0.0.1:" + (location.port || "80"))) + "/dsh-purge/prompts/ui?t=" + Date.now();
+				let w = null;
+				try { w = window.open(url, "_blank", "noopener,noreferrer"); } catch (e) {}
+				if (!w || w.closed) {
+					try { const a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; document.body.appendChild(a); a.click(); a.remove(); } catch (e) {}
+					try { navigator.clipboard.writeText(url); } catch (e) {}
+					try { window.alert("宿主拦截了新窗口，链接已复制，可粘贴到浏览器打开：\n" + url); } catch (e) {}
+				}
+			} }, "独立窗口"),
+		),
+		),
+		h("iframe", {
+			"data-promptlib": "1",
+			src: "/dsh-purge/prompts/ui",
+			title: "提示词库",
+			style: { width: "100%", height: "calc(100vh - 250px)", minHeight: 420, border: 0, borderRadius: 10, display: "block" },
+		}),
 			);
 		}
 
@@ -2049,270 +2050,6 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 			if (!r) return "";
 			if (r.name !== r.id) return r.name + " (" + r.id + ")";
 			return r.id;
-		}
-
-		function RulesSection() {
-			const t = useT();
-			const tRef = useRef(t);
-			tRef.current = t;
-			const [st, setSt] = useState(null);
-			const [editId, setEditId] = useState(null);
-			const [editName, setEditName] = useState("");
-			const [editTarget, setEditTarget] = useState("AGENTS.md");
-			const [content, setContent] = useState("");
-			const [newId, setNewId] = useState("");
-			const [newName, setNewName] = useState("");
-			const [newTarget, setNewTarget] = useState("AGENTS.md");
-			const [busy, setBusy] = useState(false);
-			const [notice, setNotice] = useState({ kind: "idle", text: "" });
-
-			const loadStatus = useCallback(() => {
-				const tr = tRef.current;
-				let cwd = "";
-				try { cwd = clientCurrentCwd(); } catch { /* ignore */ }
-				rulesApi("status", cwd ? { cwd: cwd } : undefined)
-					.then((d) => {
-						if (d && d.ok) setSt(d);
-						else {
-							setSt({ ok: false, rules: [], active: null });
-							setNotice({ kind: "error", text: tr("err.rules", { error: (d && d.error) || "bad response" }) });
-						}
-					})
-					.catch((e) => {
-						setSt({ ok: false, rules: [], active: null });
-						setNotice({ kind: "error", text: tr("err.rules", { error: e.message }) });
-					});
-			}, []);
-
-			useEffect(() => { loadStatus(); }, [loadStatus]);
-
-			const doPost = useCallback((action, payload, after) => {
-				setBusy(true);
-				setNotice({ kind: "idle", text: "" });
-				rulesApi(action, payload)
-					.then((d) => {
-						if (d && d.ok) {
-							setNotice({ kind: "ok", text: t("ok.done") });
-							if (action === "save" || action === "activate") warnNeedPrompt(d, t);
-							loadStatus();
-							if (after) after();
-						} else {
-							warnNeedPrompt(d, t);
-							setNotice({ kind: "error", text: t("err.action", { error: (d && d.error) || "" }) });
-						}
-					})
-					.catch((e) => setNotice({ kind: "error", text: t("err.action", { error: e.message }) }))
-					.finally(() => setBusy(false));
-			}, [loadStatus, t]);
-
-			const openRule = useCallback((id) => {
-				setBusy(true);
-				rulesApi("read", { id: id })
-					.then((d) => {
-						if (d.ok) {
-							setEditId(id);
-							setEditName(d.name || id);
-							setEditTarget(d.target || "AGENTS.md");
-							setContent(typeof d.content === "string" ? d.content : "");
-						} else setNotice({ kind: "error", text: t("err.read", { error: d.error || "" }) });
-					})
-					.catch((e) => setNotice({ kind: "error", text: t("err.read", { error: e.message }) }))
-					.finally(() => setBusy(false));
-			}, [t]);
-
-			const clearEditor = () => {
-				setEditId(null);
-				setEditName("");
-				setEditTarget("AGENTS.md");
-				setContent("");
-			};
-
-			let list;
-			if (!st) {
-				list = h("div", { className: "dshp-skel", style: { height: 80, margin: 12 } });
-			} else if (!st.rules || st.rules.length === 0) {
-				list = h("p", { className: "dshp-empty" }, t("rules.empty"));
-			} else {
-				list = st.rules.map((r) => {
-					const isActive = r.id === st.active;
-					const isEdit = r.id === editId;
-					return h("div", {
-						key: r.id,
-						className: "dshp-ruleitem" + (isEdit ? " is-edit" : ""),
-						role: "button",
-						tabIndex: 0,
-						onClick: () => openRule(r.id),
-						onKeyDown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openRule(r.id); } },
-					},
-						h("div", { className: "dshp-rule-main" },
-							h("span", { className: "dshp-rule-name" },
-								ruleLabel(r),
-								isActive ? h("span", { className: "dshp-pill is-ok" }, t("pill.current")) : null,
-							),
-							h("span", { className: "dshp-rule-meta" }, r.target + " · " + formatSize(r.size)),
-						),
-						h("div", { className: "dshp-rule-ops" },
-							h(Btn, {
-								tiny: true,
-								kind: isActive ? undefined : "primary",
-								disabled: busy || isActive,
-								onClick: (e) => {
-									e.stopPropagation();
-									if (!isActive) doPost("activate", { id: r.id });
-								},
-							}, isActive ? t("btn.inUse") : t("btn.use")),
-							h(Btn, {
-								tiny: true,
-								kind: "danger",
-								disabled: busy,
-								onClick: (e) => {
-									e.stopPropagation();
-									if (!window.confirm(t("confirm.delete", { id: r.id }))) return;
-									if (editId === r.id) clearEditor();
-									doPost("delete", { id: r.id });
-								},
-							}, t("delete")),
-						),
-					);
-				});
-			}
-
-			const policyValue = (st && typeof st.workspace_policy === "string") ? st.workspace_policy : "fallback";
-			const policyOptions = (st && Array.isArray(st.workspace_policies) && st.workspace_policies.length) ? st.workspace_policies : ["fallback", "strict", "always"];
-			const cwdCandidates = (st && Array.isArray(st.cwd_candidates)) ? st.cwd_candidates : [];
-			const cwdValue = (st && typeof st.cwd === "string") ? st.cwd : "";
-			return h("section", { className: "dshp-panel", "aria-label": t("rules.title") },
-				h("div", { className: "dshp-head" },
-					h("h3", { className: "dshp-title" }, t("rules.title")),
-					h("div", { className: "dshp-row", style: { margin: 0 } },
-						noticeNode(notice),
-						h(Btn, {
-							tiny: true,
-							kind: "danger",
-							disabled: busy,
-							onClick: () => {
-								if (!window.confirm(t("rules.reset.confirm"))) return;
-								clearEditor();
-								doPost("reset", {});
-							},
-						}, t("rules.reset")),
-					),
-				),
-				h("div", { className: "dshp-block" },
-					h("div", { className: "dshp-policy-row" },
-						h("label", { htmlFor: "dshp-policy-select" }, t("policy.title")),
-						h("select", {
-							id: "dshp-policy-select",
-							className: "dshp-field",
-							value: policyValue,
-							disabled: busy || !st,
-							onChange: (e) => doPost("set-policy", { policy: e.target.value }),
-						}, policyOptions.map((p) => h("option", { key: p, value: p }, t("policy." + p)))),
-					),
-					h("p", { className: "dshp-block-hint" }, t("policy.hint")),
-				),
-				h("div", { className: "dshp-block" },
-					h("div", { className: "dshp-block-head" },
-						h("h4", null, t("cwd.title")),
-						h(Btn, {
-							tiny: true,
-							disabled: busy,
-							onClick: () => {
-								let cwd = cwdValue;
-								if (!cwd) { try { cwd = clientCurrentCwd(); } catch { /* ignore */ } }
-								doPost("scan-cwd", cwd ? { cwd: cwd } : {});
-							},
-						}, t("cwd.rescan")),
-					),
-					cwdValue ? h("p", { className: "dshp-cwd-path" }, cwdValue) : null,
-					(!st || !cwdValue)
-						? h("p", { className: "dshp-empty" }, t("cwd.no.workspace"))
-						: (cwdCandidates.length === 0
-							? h("p", { className: "dshp-empty" }, t("cwd.empty"))
-							: h("div", { className: "dshp-cwd-list" }, cwdCandidates.map((item) => h("label", {
-								key: item.path,
-								className: "dshp-cwd-item" + (item.selected ? " is-on" : ""),
-							},
-								h("input", {
-									type: "checkbox",
-									checked: Boolean(item.selected),
-									disabled: busy,
-									onChange: (e) => doPost("toggle-cwd", { path: item.path, enabled: e.target.checked }),
-								}),
-								h("div", { className: "dshp-cwd-main" },
-									h("div", { className: "dshp-cwd-name" },
-										h("span", null, item.name),
-										h("span", { className: "dshp-cwd-badge" }, t("cwd.scope." + (item.scope || "cwd"))),
-										h("span", { className: "dshp-cwd-size" }, formatSize(item.size || 0)),
-									),
-									h("div", { className: "dshp-cwd-sub" }, item.path),
-									item.preview ? h("div", { className: "dshp-cwd-prev" }, item.preview) : null,
-								),
-							)))),
-					h("p", { className: "dshp-block-hint" }, t("cwd.hint")),
-				),
-				h("div", { className: "dshp-block" },
-				h("div", { className: "dshp-split" },
-					h("div", { className: "dshp-rulelist" },
-						h("div", { className: "dshp-rulebody" }, list),
-						h("div", { className: "dshp-create" },
-							h("div", { className: "dshp-create-row" },
-								h("input", { className: "dshp-field", placeholder: t("ph.id"), value: newId, onChange: (e) => setNewId(e.target.value) }),
-								h("input", { className: "dshp-field", placeholder: t("ph.alias"), value: newName, onChange: (e) => setNewName(e.target.value) }),
-								h("select", { className: "dshp-field", style: { minWidth: 120, flex: "0 0 auto" }, value: newTarget, onChange: (e) => setNewTarget(e.target.value) },
-									TARGETS.map((x) => h("option", { key: x, value: x }, x))),
-								h(Btn, {
-									kind: "primary",
-									tiny: true,
-									disabled: busy,
-									onClick: () => {
-										const id = newId.trim();
-										if (!id) { setNotice({ kind: "error", text: t("need.id") }); return; }
-										const name = newName.trim() || id;
-										const target = newTarget;
-										doPost("save", { id, content: "", name, target }, () => {
-											setEditId(id);
-											setEditName(name);
-											setEditTarget(target);
-											setContent("");
-										});
-										setNewId(""); setNewName(""); setNewTarget("AGENTS.md");
-									},
-								}, t("btn.create")),
-							),
-						),
-					),
-					h("div", { className: "dshp-editor" },
-						editId ? [
-							h("div", { key: "meta", className: "dshp-row" },
-								h("input", {
-									className: "dshp-field", placeholder: t("ph.alias.short"), value: editName,
-									onChange: (e) => setEditName(e.target.value),
-								}),
-								h("select", {
-									className: "dshp-field", style: { minWidth: 120 }, value: editTarget,
-									onChange: (e) => setEditTarget(e.target.value),
-								}, TARGETS.map((x) => h("option", { key: x, value: x }, x))),
-							),
-							h("textarea", {
-								key: "body",
-								className: "dshp-area", value: content,
-								onChange: (e) => setContent(e.target.value),
-								placeholder: "",
-							}),
-							h("div", { key: "save", className: "dshp-row" },
-								h(Btn, {
-									kind: "primary",
-									disabled: busy,
-									onClick: () => doPost("save", { id: editId, content, name: editName, target: editTarget }),
-								}, t("btn.saveRule")),
-								noticeNode(notice),
-							),
-						] : h("div", { className: "dshp-editor-empty" }, t("rules.pick")),
-					),
-				),
-				),
-			);
 		}
 
 		function skillUiAllowed(d) {
@@ -2392,296 +2129,6 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 			if (item && item.current) return base + " · " + tr("update.current");
 			if (item && item.latest) return base + " · " + tr("update.tip");
 			return base;
-		}
-
-		function SkillsSection() {
-			const t = useT();
-			const tRef = useRef(t);
-			tRef.current = t;
-			const [onBeta, setOnBeta] = useState(false);
-			const [st, setSt] = useState(null);
-			const [editId, setEditId] = useState(null);
-			const [editDesc, setEditDesc] = useState("");
-			const [content, setContent] = useState("");
-			const [busy, setBusy] = useState(false);
-			const [notice, setNotice] = useState({ kind: "idle", text: "" });
-			const zipRef = useRef(null);
-			const folderRef = useRef(null);
-
-			const loadStatus = useCallback(() => {
-				const tr = tRef.current;
-				const fail = (e) => {
-					setSt({ ok: false, skills: [] });
-					setNotice({
-						kind: "error",
-						text: skillsRouteMissing(e) ? tr("err.skills.needRestart") : tr("err.skills", { error: (e && e.message) || e || "bad response" }),
-					});
-				};
-				const apply = (d) => {
-					if (d && d.ok) setSt({ ok: true, skills: d.skills || [] });
-					else fail({ message: (d && d.error) || "bad response" });
-				};
-				apiJson("/dsh-purge/status")
-					.then((d) => {
-						const allowed = skillUiAllowed(d);
-						setOnBeta(allowed);
-						if (!allowed) {
-							setSt(null);
-							return;
-						}
-						if (d.skills) {
-							apply({ ok: true, skills: d.skills });
-							return;
-						}
-						skillsApi("status").then(apply).catch(fail);
-					})
-					.catch(() => {
-						setOnBeta(false);
-						setSt(null);
-					});
-			}, []);
-
-			useEffect(() => { loadStatus(); }, [loadStatus]);
-
-			const doPost = useCallback((action, payload, after) => {
-				setBusy(true);
-				setNotice({ kind: "idle", text: "" });
-				skillsApi(action, payload)
-					.then((d) => {
-						if (d && d.ok) {
-							setNotice({ kind: "ok", text: t("ok.done") });
-							loadStatus();
-							if (after) after(d);
-						} else {
-							setNotice({ kind: "error", text: t("err.action", { error: (d && d.error) || "" }) });
-						}
-					})
-					.catch((e) => setNotice({
-						kind: "error",
-						text: skillsRouteMissing(e) ? t("err.skills.needRestart") : t("err.action", { error: e.message }),
-					}))
-					.finally(() => setBusy(false));
-			}, [loadStatus, t]);
-
-			const openSkill = useCallback((id) => {
-				setBusy(true);
-				skillsApi("read", { id: id })
-					.then((d) => {
-						if (d.ok) {
-							setEditId(id);
-							setEditDesc(d.description || "");
-							setContent(typeof d.content === "string" ? d.content : "");
-						} else setNotice({ kind: "error", text: t("err.read", { error: d.error || "" }) });
-					})
-					.catch((e) => setNotice({ kind: "error", text: t("err.read", { error: e.message }) }))
-					.finally(() => setBusy(false));
-			}, [t]);
-
-			const clearEditor = () => {
-				setEditId(null);
-				setEditDesc("");
-				setContent("");
-			};
-
-			const readAsBase64 = (file) => new Promise((resolve, reject) => {
-				const reader = new FileReader();
-				reader.onload = () => {
-					const text = String(reader.result || "");
-					const at = text.indexOf(",");
-					resolve(at >= 0 ? text.slice(at + 1) : text);
-				};
-				reader.onerror = () => reject(new Error(t("need.import")));
-				reader.readAsDataURL(file);
-			});
-
-			const importZip = (file) => {
-				if (!file) {
-					setNotice({ kind: "error", text: t("need.import") });
-					return;
-				}
-				setBusy(true);
-				setNotice({ kind: "ok", text: t("skills.importing") });
-				readAsBase64(file)
-					.then((data) => skillsApi("import", { data, name: file.name }))
-					.then((d) => {
-						if (!d || !d.ok) throw new Error((d && d.error) || "");
-						setNotice({ kind: "ok", text: t("saved.import", { count: (d.imported || []).length || 1 }) });
-						loadStatus();
-					})
-					.catch((e) => setNotice({
-						kind: "error",
-						text: skillsRouteMissing(e) ? t("err.skills.needRestart") : t("err.action", { error: e.message }),
-					}))
-					.finally(() => setBusy(false));
-			};
-
-			const keepFolderFile = (file) => {
-				const rel = String(file.webkitRelativePath || file.name || "").replace(/\\/g, "/");
-				if (!rel || rel.includes("..")) return false;
-				if (/(^|\/)(node_modules|\.git|__MACOSX|\.system)(\/|$)/i.test(rel)) return false;
-				if (/(^|\/)\._/.test(rel) || /\/\.DS_Store$/i.test(rel)) return false;
-				return true;
-			};
-
-			const importFolder = (list) => {
-				const files = Array.from(list || []).filter(keepFolderFile);
-				if (!files.length) {
-					setNotice({ kind: "error", text: t("err.import.folder") });
-					return;
-				}
-				setBusy(true);
-				setNotice({ kind: "ok", text: t("skills.importing") });
-				Promise.all(files.map((file) => readAsBase64(file).then((content) => ({
-					path: file.webkitRelativePath || file.name,
-					content,
-					encoding: "base64",
-				}))))
-					.then((payload) => skillsApi("import", {
-						files: payload,
-						name: String(payload[0] && payload[0].path || "").split("/")[0],
-					}))
-					.then((d) => {
-						if (!d || !d.ok) throw new Error((d && d.error) || "");
-						setNotice({ kind: "ok", text: t("saved.import", { count: (d.imported || []).length || 1 }) });
-						loadStatus();
-					})
-					.catch((e) => setNotice({
-						kind: "error",
-						text: skillsRouteMissing(e) ? t("err.skills.needRestart") : t("err.action", { error: e.message }),
-					}))
-					.finally(() => setBusy(false));
-			};
-
-			if (!onBeta) return null;
-
-			let list;
-			if (!st) {
-				list = h("div", { className: "dshp-skel", style: { height: 80, margin: 12 } });
-			} else if (!st.skills || st.skills.length === 0) {
-				list = h("p", { className: "dshp-empty" }, t("skills.empty"));
-			} else {
-				list = st.skills.map((item) => {
-					const isEdit = item.id === editId;
-					return h("div", {
-						key: item.id,
-						className: "dshp-ruleitem" + (isEdit ? " is-edit" : ""),
-						role: "button",
-						tabIndex: 0,
-						onClick: () => openSkill(item.id),
-						onKeyDown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openSkill(item.id); } },
-					},
-						h("div", { className: "dshp-rule-main" },
-							h("span", { className: "dshp-rule-name" }, item.id),
-							h("span", { className: "dshp-rule-meta" },
-								(item.valid ? item.description : t("skills.invalid")) + " · " + formatSize(item.size),
-							),
-							item.valid ? h("span", { className: "dshp-rule-meta" },
-								[
-									item.userInvocable ? t("skills.call.slash", { cmd: "/" + item.id }) : t("skills.call.userOff"),
-									item.modelInvocable ? t("skills.call.model") : t("skills.call.modelOff"),
-								].join(" · "),
-							) : null,
-						),
-						h("div", { className: "dshp-rule-ops" },
-							h(Btn, {
-								tiny: true,
-								kind: "danger",
-								disabled: busy,
-								onClick: (e) => {
-									e.stopPropagation();
-									if (!window.confirm(t("confirm.delete.skill", { id: item.id }))) return;
-									if (editId === item.id) clearEditor();
-									doPost("delete", { id: item.id });
-								},
-							}, t("delete")),
-						),
-					);
-				});
-			}
-
-			return h("section", { className: "dshp-panel", "aria-label": t("skills.title") },
-				h("div", { className: "dshp-head" },
-					h("h3", { className: "dshp-title" }, t("skills.title")),
-					h("div", { className: "dshp-row", style: { margin: 0 } }, noticeNode(notice)),
-				),
-				h("p", { className: "dshp-hint", style: { margin: "0 0 10px", color: "var(--dshp-mute)", fontSize: 12 } }, hostText(t, "skills.hint", hostSurfaceOf())),
-				h("div", { className: "dshp-split" },
-					h("div", { className: "dshp-rulelist" },
-						h("div", { className: "dshp-rulebody" }, list),
-						h("div", { className: "dshp-create" },
-							h("div", { className: "dshp-create-row" },
-								h("input", {
-									ref: zipRef,
-									type: "file",
-									accept: ".zip,.tgz,.tar.gz,.tar,.skill",
-									style: { display: "none" },
-									onChange: (e) => {
-										const file = e.target.files && e.target.files[0];
-										e.target.value = "";
-										importZip(file);
-									},
-								}),
-								h("input", {
-									ref: (el) => {
-										folderRef.current = el;
-										if (!el) return;
-										el.setAttribute("webkitdirectory", "");
-										el.setAttribute("directory", "");
-										el.multiple = true;
-									},
-									type: "file",
-									multiple: true,
-									style: { display: "none" },
-									onChange: (e) => {
-										const files = Array.from((e.target && e.target.files) || []);
-										e.target.value = "";
-										importFolder(files);
-									},
-								}),
-								h(Btn, {
-									kind: "primary",
-									tiny: true,
-									disabled: busy,
-									onClick: () => zipRef.current && zipRef.current.click(),
-								}, t("btn.importZip")),
-								h(Btn, {
-									tiny: true,
-									disabled: busy,
-									onClick: () => folderRef.current && folderRef.current.click(),
-								}, t("btn.importFolder")),
-							),
-						),
-					),
-					h("div", { className: "dshp-editor" },
-						editId ? [
-							h("div", { key: "meta", className: "dshp-row" },
-								h("input", {
-									className: "dshp-field",
-									placeholder: t("ph.skill.desc"),
-									value: editDesc,
-									onChange: (e) => setEditDesc(e.target.value),
-								}),
-							),
-							h("textarea", {
-								key: "body",
-								className: "dshp-area",
-								value: content,
-								onChange: (e) => setContent(e.target.value),
-								spellCheck: false,
-								placeholder: "",
-							}),
-							h("div", { key: "save", className: "dshp-row" },
-								h(Btn, {
-									kind: "primary",
-									disabled: busy,
-									onClick: () => doPost("save", { id: editId, content, description: editDesc }),
-								}, t("btn.saveSkill")),
-								noticeNode(notice),
-							),
-						] : h("div", { className: "dshp-editor-empty" }, t("skills.pick")),
-					),
-				),
-			);
 		}
 
 		function reopenAfterRestart() {
@@ -4766,188 +4213,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
     }
 
     /* ---------------------------------------------------------- 技能库（DSH 原生） */
-    function SkillsTab(props) {
-      const refreshKey = props.refreshKey || 0
-      const [items, setItems] = React.useState([])
-      const [meta, setMeta] = React.useState({})
-      const [err, setErr] = React.useState(null)
-      const [q, setQ] = React.useState('')
-      const [srcOnly, setSrcOnly] = React.useState(false)
-      const [active, setActive] = React.useState(null)
-      const [detail, setDetail] = React.useState(null)
-      const [busy, setBusy] = React.useState(false)
-      const [brokenOnly, setBrokenOnly] = React.useState(false)
-
-      /* refresh=true 跳过后端 30 秒可用性缓存（技能正文/环境变量可能刚改过） */
-      const load = (force) => {
-        setBusy(true)
-        api({ op: 'skillCatalog', refresh: force === true }).then((r) => {
-          setBusy(false)
-          if (!r || r.ok === false) { setErr((r && r.error) || '读取失败'); return }
-          setErr(null)
-          setMeta(r || {})
-          setItems(r.items || [])
-        }, (e) => { setBusy(false); setErr(String((e && e.message) || e)) })
-      }
-      React.useEffect(load, [refreshKey])
-
-      const open = (skill) => {
-        const name = skill && skill.name
-        const key = (skill && skill.library ? skill.library : 'redteam') + ':' + name
-        if (active === key) { setActive(null); setDetail(null); return }
-        setActive(key)
-        setDetail(null)
-        api({ op: 'skillRead', name: name, library: skill.library || 'redteam' }).then((r) => {
-          if (r && r.ok) setDetail(r)
-          else setErr((r && r.error) || '读取失败')
-        }, (e) => setErr(String((e && e.message) || e)))
-      }
-
-      const needle = q.trim().toLowerCase()
-      let filtered = needle
-        ? items.filter((s) => (s.name + ' ' + s.description + ' ' + s.whenToUse).toLowerCase().indexOf(needle) >= 0)
-        : items
-      if (srcOnly) filtered = filtered.filter((s) => s.library !== 'official' && s.fromPlugin === true)
-      if (brokenOnly) filtered = filtered.filter((s) => s.library !== 'official' && (s.availability === 'broken' || s.availability === 'unknown'))
-      /* 目录聚合：一眼看出"这么多技能是哪来的"（本项目/别的插件/自带根…） */
-      const dirs = (meta.byDir || []).filter((d) => d.n > 0).slice(0, 6)
-      const availSummary = meta.availability ? meta.availability.summary : null
-      const needRestart = err !== null && String(err).indexOf('unknown op') >= 0
-
-      const renderSkill = (s) => h('div', Object.assign({
-        key: (s.library || 'redteam') + ':' + s.name, className: 'rt-item' + (active === ((s.library || 'redteam') + ':' + s.name) ? ' on' : ''),
-      }, clickable(() => open(s), { label: '查看技能 ' + s.name, expanded: active === ((s.library || 'redteam') + ':' + s.name) })),
-        h('div', { className: 'rt-item-name' }, s.name,
-          s.modelInvocable === false ? h('span', { className: 'rt-tag', style: { marginLeft: 6 } }, '仅人工') : null,
-          s.library === 'official'
-            ? h('span', { className: 'rt-tag', style: { marginLeft: 6 }, title: '官方技能目录，不按红队工具路径检查' }, '官方')
-            : h('span', {
-              className: 'rt-avail rt-avail-' + (s.availability || 'unknown'),
-              style: { marginLeft: 6 },
-              title: (s.availability === 'available'
-                ? '可用：技能正文可以加载。缺的外部工具或密钥记在详情里，不阻止调用。'
-                : (s.problems || []).join('\n') || '未知'),
-            }, s.availability === 'available' ? '可用' : s.availability === 'broken' ? '不可用' : '未知'),
-        h('div', { className: 'rt-item-desc' }, s.description || '（无描述）'),
-        h('div', { className: 'rt-kb-sub' },
-          [s.source ? '来源 ' + s.source : null,
-            s.fromPlugin ? '本插件自带' : null,
-            s.provider ? s.provider : null,
-            s.dir ? s.dir : null].filter(Boolean).join(' · ')),
-        (s.problems || []).length > 0 && s.availability !== 'available' && s.library !== 'official'
-          ? h('div', { className: 'rt-kb-sub', style: { color: 'var(--dsw-alias-state-warn-primary, #f59e0b)' } },
-              '⚠ ' + String(s.problems[0]).slice(0, 60))
-          : null))
-      const redteamRows = filtered.filter((s) => s.library !== 'official').map(renderSkill)
-      const officialRows = filtered.filter((s) => s.library === 'official').map(renderSkill)
-      const listItems = []
-      if (redteamRows.length > 0) {
-        listItems.push(h('div', { key: 'head-redteam', className: 'rt-kb-sub', style: { margin: '8px 0 4px', fontWeight: 600 } }, '红队技能'))
-        listItems.push.apply(listItems, redteamRows)
-      }
-      if (officialRows.length > 0) {
-        listItems.push(h('div', { key: 'head-official', className: 'rt-kb-sub', style: { margin: '8px 0 4px', fontWeight: 600 } }, '官方技能'))
-        listItems.push.apply(listItems, officialRows)
-      }
-
-      return h('div', { className: 'rt-split' },
-        h('div', { className: 'rt-list' },
-          h('input', {
-            className: 'rt-input', style: { width: '100%', marginBottom: 8, boxSizing: 'border-box' },
-            placeholder: '过滤技能', value: q, onChange: (e) => setQ(e.target.value),
-          }),
-          h('label', { className: 'rt-kb-check', style: { display: 'flex', margin: '0 0 6px' } },
-            h('input', { type: 'checkbox', checked: srcOnly, onChange: (e) => setSrcOnly(e.target.checked) }),
-            '只看本插件自带（' + (meta.fromPlugin || 0) + ' 个）'),
-          availSummary && (availSummary.broken > 0 || availSummary.unknown > 0)
-            ? h('label', {
-                className: 'rt-kb-check', style: { display: 'flex', margin: '0 0 8px' },
-                title: '只看有明确缺口（缺 key / 缺本机路径 / 基础设施还是占位符）或判不了可用性的技能',
-              },
-                h('input', { type: 'checkbox', checked: brokenOnly, onChange: (e) => setBrokenOnly(e.target.checked) }),
-                '只看不可用/未知（' + ((availSummary.broken || 0) + (availSummary.unknown || 0)) + ' 个）')
-            : null,
-          availSummary
-            ? h('div', { style: { display: 'flex', gap: 4, flexWrap: 'wrap', marginBottom: 6 } },
-                h('span', { className: 'rt-avail rt-avail-available' }, '可用 ' + (availSummary.available || 0)),
-                availSummary.broken > 0 ? h('span', { className: 'rt-avail rt-avail-broken' }, '不可用 ' + availSummary.broken) : null,
-                availSummary.unknown > 0 ? h('span', { className: 'rt-avail rt-avail-unknown' }, '未知 ' + availSummary.unknown) : null,
-                h('span', Object.assign({
-                  className: 'rt-tag', style: { cursor: 'pointer' },
-                  title: '技能正文或环境变量刚改过？点这里跳过 30 秒缓存重查',
-                }, clickable(() => load(true), { label: '重新检查技能可用性' })), '重查可用性'))
-            : null,
-          h('div', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)', marginBottom: 6 } },
-            '红队 ' + ((meta.libraries && meta.libraries.redteam) || 0) + ' · 官方 ' + ((meta.libraries && meta.libraries.official) || 0),
-            items.length > 100 ? h('div', { style: { marginTop: 3 } },
-              '（技能多来自其它插件注册的根或你自己的技能目录；本插件只自带 ' + (meta.fromPlugin || 0) + ' 个）') : null),
-          listItems),
-        h('div', { className: 'rt-main' },
-          h('div', { className: 'rt-toolbar' },
-            h('span', { style: { fontWeight: 600 } }, detail ? detail.name : '技能目录（DSH 原生）'),
-            h('div', { className: 'rt-spacer' }),
-            h('button', { className: 'rt-btn', disabled: busy, onClick: () => load(true) }, busy ? '刷新中…' : '刷新')),
-          err
-            ? (needRestart
-                ? h('div', { className: 'rt-empty' }, '该模块的宿主代码已更新，需重启一次当前宿主（官方 exe / 社区版 / dsh web）后生效')
-                : h('div', { className: 'rt-err' }, err))
-            : null,
-          detail
-            ? h('div', { className: 'rt-pane' },
-                h('div', { className: 'rt-kv' }, h('b', null, '描述'), h('span', null, detail.description || '—')),
-                h('div', { className: 'rt-kv' }, h('b', null, '何时使用'), h('span', null, detail.whenToUse || '—')),
-                h('div', { className: 'rt-kv' }, h('b', null, '来源'), h('span', null, (detail.provider || '—') + ' / ' + (detail.source || '—'))),
-                (() => {
-                  const s2 = items.find((x) => ((x.library || 'redteam') + ':' + x.name) === active)
-                  if (!s2) return null
-                  if (s2.library === 'official') {
-                    return h('div', { className: 'rt-kv' }, h('b', null, '类型'), h('span', null, '官方技能。由宿主按任务调用，不按红队工具路径检查。'))
-                  }
-                  const avail = s2.availability || 'unknown'
-                  return h('div', null,
-                    h('div', { className: 'rt-kv' }, h('b', null, '可用性'),
-                      h('span', { className: 'rt-avail rt-avail-' + avail },
-                        avail === 'available' ? '可用' : avail === 'broken' ? '不可用（有明确缺口）' : '未知（正文读不到）')),
-                    (s2.problems || []).length > 0
-                      ? h('div', { className: 'rt-kv' }, h('b', null, avail === 'available' ? '未装上的外部工具' : '缺口'),
-                          h('span', null, s2.problems.map((x, i) => h('div', { key: 'p' + i }, '· ' + x))))
-                      : null,
-                    (s2.needs_user || []).length > 0
-                      ? h('div', { className: 'rt-kv' }, h('b', null, '需要你提供'),
-                          h('span', { style: { color: 'var(--dsw-alias-state-warn-primary, #f59e0b)' } },
-                            s2.needs_user.map((x, i) => h('div', { key: 'n' + i }, '· ' + x))))
-                      : null)
-                })(),
-                detail.path ? h('div', { className: 'rt-kv' }, h('b', null, '文件'), h('span', { className: 'rt-mono', style: { wordBreak: 'break-all' } }, detail.path)) : null,
-                h('pre', { className: 'rt-md', style: { border: '1px solid var(--dsw-alias-border-l1)', borderRadius: 6, maxHeight: '52vh' } }, detail.content || '（空）'))
-            : h('div', { className: 'rt-pane' },
-                h('div', { style: { fontSize: 12, color: 'var(--dsw-alias-label-secondary)', marginBottom: 8 } },
-                  meta.note || '技能由 DSH 原生 skill 体系管理，红队智能体通过 skill 工具调用。'),
-                availSummary
-                  ? h('div', { style: { fontSize: 12, marginBottom: 8, display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' } },
-                      h('span', { className: 'rt-avail rt-avail-available' }, '可用 ' + (availSummary.available || 0)),
-                      availSummary.broken > 0 ? h('span', { className: 'rt-avail rt-avail-broken' }, '不可用 ' + availSummary.broken) : null,
-                      availSummary.unknown > 0 ? h('span', { className: 'rt-avail rt-avail-unknown' }, '未知 ' + availSummary.unknown) : null,
-                      h('span', { style: { color: 'var(--dsw-alias-label-secondary)' } },
-                        '（' + (meta.availability && meta.availability.cached ? '缓存于 ' : '检查于 ')
-                        + (meta.availability && meta.availability.checked_at ? fmt(meta.availability.checked_at) : '—') + '）'))
-                  : null,
-                meta.availability && (meta.availability.broken || []).length > 0
-                  ? h('div', { className: 'rt-hint' },
-                      h('div', { style: { fontWeight: 600, marginBottom: 4 } }, '现在跑不起来的技能：'),
-                      meta.availability.broken.slice(0, 12).map((b) => h('div', { key: b.name },
-                        '· ' + b.name + (b.problems && b.problems.length ? ' — ' + b.problems[0] : ''))))
-                  : null,
-                (meta.byDir || []).slice(0, 6).map((d) => h('div', { key: d.key, className: 'rt-mono', style: { fontSize: 11, marginBottom: 2, overflowWrap: 'anywhere' } },
-                  d.n + ' 个 · ' + d.key)),
-                (meta.byDir || []).length > 6
-                  ? h('div', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)' } },
-                      '…另有 ' + ((meta.byDir || []).length - 6) + ' 个目录（共 ' + items.length + ' 个技能）')
-                  : null,
-                h('div', { className: 'rt-empty' }, '左侧选择技能查看内容')))
-      )
-    }
-
     /* ---------------------------------------------------------- 漏洞战果 */
     const SEV_LABEL = { critical: '严重', high: '高危', medium: '中危', low: '低危', info: '信息' }
     const STATUS_LABEL = { candidate: '待验证', confirmed: '已确认', 'false-positive': '误报', exploited: '已利用', fixed: '已修复' }
@@ -5822,272 +5087,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
      */
     const POC_KIND_LABEL = { poc: 'POC', exp: 'EXP', script: '脚本', template: '模板', payload: '载荷' }
     const POC_SOURCE_LABEL = { web: '互联网', self: '手搓', manual: '人工', 'nuclei-template': 'nuclei 模板', kb: '知识库' }
-
-    function KnowledgeTab(props) {
-      const refreshKey = props.refreshKey || 0
-      const [data, setData] = React.useState(null)
-      const [err, setErr] = React.useState(null)
-      const [busy, setBusy] = React.useState(false)
-      const [msg, setMsg] = React.useState(null)
-      const [q, setQ] = React.useState('')
-      const [kind, setKind] = React.useState('')
-      const [category, setCategory] = React.useState('')
-      const [engagement, setEngagement] = React.useState('')
-      const [assetTarget, setAssetTarget] = React.useState('')
-      const [grouped, setGrouped] = React.useState(true)
-      const [verifiedOnly, setVerifiedOnly] = React.useState(false)
-      const [openId, setOpenId] = React.useState(null)
-      const [detail, setDetail] = React.useState(null)
-      const [detailBusy, setDetailBusy] = React.useState(false)
-      const [tplOffset, setTplOffset] = React.useState(0)
-      const tplPageSize = 40
-
-      const query = (over) => {
-        const extra = over || {}
-        const offset = Object.prototype.hasOwnProperty.call(extra, 'templateOffset') ? extra.templateOffset : 0
-        setTplOffset(offset)
-        const params = Object.assign({
-          q: q.trim() || undefined,
-          kind: kind || undefined,
-          category: category || undefined,
-          engagement: engagement || undefined,
-          asset_target: assetTarget.trim() || undefined,
-          verified: verifiedOnly || undefined,
-          templateOffset: offset || 0,
-          templateLimit: tplPageSize,
-        }, extra)
-        setBusy(true); setMsg(null)
-        api(Object.assign({ op: 'pocSearch' }, params)).then((r) => {
-          setBusy(false)
-          if (!r || r.ok === false) { setErr((r && r.error) || '读取失败'); return }
-          setErr(null); setData(r)
-        }, (e) => { setBusy(false); setErr(String((e && e.message) || e)) })
-      }
-      /* 首次进入与刷新键变化时拉全量（检索是显式动作，避免边打字边打接口） */
-      React.useEffect(() => { query({ q: undefined, kind: undefined, category: undefined, engagement: undefined, asset_target: undefined, verified: undefined }) }, [refreshKey])
-
-      const open = (id) => {
-        if (openId === id) { setOpenId(null); setDetail(null); return }
-        setOpenId(id); setDetail(null); setDetailBusy(true)
-        api({ op: 'pocGet', id: id }).then((r) => {
-          setDetailBusy(false)
-          if (!r || r.ok === false) { setMsg({ err: (r && r.error) || '读取失败' }); return }
-          setDetail(r)
-        }, (e) => { setDetailBusy(false); setMsg({ err: String((e && e.message) || e) }) })
-      }
-
-      /* 同报告页：await 真实结果再提示 */
-      const copy = (text, label) => copyWithFeedback(text, label, (okFlag, message) => {
-        setMsg(okFlag ? { ok: message } : { err: message })
-      })
-      const useIt = (row) => {
-        api({ op: 'pocUse', id: row.id, used_on: '控制台手动标记' }).then(() => {
-          setMsg({ ok: '已记一次复用：' + row.title })
-          query()
-        }, (e) => setMsg({ err: String((e && e.message) || e) }))
-      }
-
-      const stats = (data && data.stats) || { total: 0, verified: 0, reused: 0, byKind: [], bySource: [] }
-      const items = (data && data.items) || []
-      const tpl = (data && data.templates) || { dir: null, total: 0, matched: 0, offset: 0, items: [], byCategory: [] }
-      const tplByCat = new Map((tpl.byCategory || []).map((c) => [c.code, c.n || 0]))
-      const catShown = (c) => (c.n || 0) + (tplByCat.get(c.code) || 0)
-      const tplItems = tpl.items || []
-      const tplMatched = tpl.matched != null ? tpl.matched : tpl.total
-      const tplStart = Number(tpl.offset) || 0
-      const turnTpl = (next) => {
-        const offset = Math.max(0, next)
-        setTplOffset(offset)
-        query({ templateOffset: offset })
-      }
-
-      const card = (x) => {
-        const isOpen = openId === x.id
-        const d = isOpen && detail && detail.id === x.id ? detail : null
-        return h('div', { key: 'p' + x.id, className: 'rt-kb' + (isOpen ? ' open' : '') },
-          h('div', {
-            className: 'rt-kb-head', role: 'button', tabIndex: 0, 'aria-expanded': isOpen ? 'true' : 'false',
-            onClick: () => open(x.id),
-            onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(x.id) } },
-          },
-            h('span', { className: 'rt-sec-caret' }, isOpen ? '▾' : '▸'),
-            h('span', { className: 'rt-kb-kind k-' + (x.kind || 'poc') }, POC_KIND_LABEL[x.kind] || x.kind || 'POC'),
-            h('span', { className: 'rt-kb-title' }, x.title),
-            x.cve ? h('span', { className: 'rt-tag rt-tag-passive' }, x.cve) : null,
-            x.component ? h('span', { className: 'rt-tag' }, x.component) : null,
-            x.verified === 1
-              ? h('span', { className: 'rt-tag rt-tag-live' }, '已验证')
-              : h('span', { className: 'rt-tag rt-tag-warn' }, '未验证'),
-            h('div', { className: 'rt-spacer' }),
-            h('span', { className: 'rt-tag' }, POC_SOURCE_LABEL[x.source] || x.source || '—'),
-            x.hit_count ? h('span', { className: 'rt-tag' }, '复用 ' + x.hit_count) : null),
-          /* 来源行：归类 · 影响版本 · 建立时间 · 来源靶标 · 发现资产 —— 一条知识"什么时候、
-             在哪个单位的哪台资产上发现的"一眼可见 */
-          h('div', { className: 'rt-kb-sub' },
-            [x.category ? '归类 ' + (POC_CAT_NAME[x.category] || x.category) : null,
-              x.versions ? '影响版本 ' + x.versions : null,
-              x.language || null,
-              x.tags || null,
-              '建立时间 ' + fmt(x.created_at),
-              (x.engagement_name || x.engagement_id) ? '来源靶标 ' + (x.engagement_name || x.engagement_id) : null,
-              x.asset_target ? '发现资产 ' + x.asset_target : null,
-              x.found_by_agent ? '发现角色 ' + (ROLE_LABEL[x.found_by_agent] || x.found_by_agent) : null,
-              x.source_url ? '来源 ' + x.source_url : null].filter(Boolean).join(' · ')),
-          isOpen
-            ? h('div', { className: 'rt-kb-body' },
-                detailBusy && !d ? h('div', { className: 'rt-empty' }, '读取中…') : null,
-                d ? h('div', null,
-                  d.usage ? h('div', { className: 'rt-kv' }, h('b', null, '用法'), h('span', { className: 'rt-mono' }, d.usage)) : null,
-                  d.description ? h('div', { className: 'rt-kv' }, h('b', null, '说明'), h('span', null, d.description)) : null,
-                  d.verified_note ? h('div', { className: 'rt-kv' }, h('b', null, '验证证据'), h('span', null, d.verified_note)) : null,
-                  d.used_on ? h('div', { className: 'rt-kv' }, h('b', null, '最近使用'), h('span', null, d.used_on)) : null,
-                  d.path ? h('div', { className: 'rt-kv' }, h('b', null, '落盘'), h('span', { className: 'rt-mono' }, d.path)) : null,
-                  h('div', { className: 'rt-kb-actions' },
-                    h('button', { className: 'rt-btn', disabled: !d.content, onClick: () => copy(d.content || '', 'POC 正文') }, '复制正文'),
-                    h('button', { className: 'rt-btn', onClick: () => useIt(x) }, '记一次复用'),
-                    d.source_url ? h('button', { className: 'rt-btn', onClick: () => copy(d.source_url, '来源链接') }, '复制来源') : null),
-                  d.content
-                    ? h('pre', { className: 'rt-rep-http' }, d.content.length > 12000 ? d.content.slice(0, 12000) + '\n…（已截断，完整内容见落盘文件）' : d.content)
-                    : h('div', { className: 'rt-empty' }, '这条只有元数据，没有正文 —— 拿到正文后用 redteam_poc_update 补上'))
-                : null)
-            : null)
-      }
-
-      return h('div', { className: 'rt-main' },
-        h('div', { className: 'rt-toolbar' },
-          h('span', { style: { fontWeight: 600 } }, '知识库 · POC / EXP'),
-          h('span', { className: 'rt-tag' }, stats.total + ' 条'),
-          h('span', { className: 'rt-tag rt-tag-live' }, '已验证 ' + stats.verified),
-          h('span', { className: 'rt-tag' }, '累计复用 ' + (stats.reused || 0)),
-          (stats.uncategorized || 0) > 0 && (stats.uncategorized || 0) !== stats.total
-            ? h('span', { className: 'rt-tag rt-tag-warn', title: '这些条目还没归类：智能体回填时用 redteam_poc_add 的 category 参数标一下' }, '未归类 ' + stats.uncategorized)
-            : null,
-          tpl.total ? h('span', { className: 'rt-tag rt-tag-passive' }, '本机模板 ' + tpl.total) : null,
-          h('div', { className: 'rt-spacer' }),
-          h('button', { className: 'rt-btn' + (grouped ? ' rt-btn-primary' : ''), title: '按归类分组显示 / 平铺显示', onClick: () => setGrouped(!grouped) }, grouped ? '按归类分组' : '平铺显示'),
-          h('button', { className: 'rt-btn', disabled: busy, onClick: () => query() }, busy ? '检索中…' : '刷新')),
-        /* 归类总览：点一下就是按该类筛选，一眼看清"哪类武器攒了多少、哪类还是空的" */
-        h('div', { className: 'rt-kb-cats' },
-          (stats.byCategory || []).filter((c) => catShown(c) > 0 || POC_CAT_ORDER.includes(c.code)).map((c) => h('span', {
-            key: c.code,
-            className: 'rt-concl-i' + (category === c.code ? ' on' : ''),
-            title: (c.hint || POC_CAT_NAME[c.code] || c.code)
-              + ' · 本机模板 ' + (tplByCat.get(c.code) || 0)
-              + ' · 知识库 ' + (c.n || 0)
-              + (c.verified ? '（已验证 ' + c.verified + '）' : ''),
-            onClick: () => {
-              const next = category === c.code ? '' : c.code
-              setCategory(next)
-              query({ category: next || undefined })
-            },
-          },
-            h('b', null, String(catShown(c))),
-            h('span', null, (POC_CAT_NAME[c.code] || c.code) + (c.verified ? '（已验证 ' + c.verified + '）' : ''))))),
-        h('div', { className: 'rt-kb-filter' },
-          h('input', {
-            className: 'rt-input', style: { flex: 1, minWidth: 140 }, placeholder: '搜 CVE / 组件 / 关键字（正文也会搜）',
-            value: q, onChange: (e) => setQ(e.target.value),
-            onKeyDown: (e) => { if (e.key === 'Enter') query() },
-          }),
-          h('select', { className: 'rt-input', style: { maxWidth: 120 }, value: category, onChange: (e) => { setCategory(e.target.value); query({ category: e.target.value || undefined }) } },
-            h('option', { value: '' }, '全部归类'),
-            POC_CAT_ORDER.map((k) => h('option', { key: k, value: k }, POC_CAT_NAME[k]))),
-          h('select', { className: 'rt-input', style: { maxWidth: 120 }, value: engagement, onChange: (e) => { setEngagement(e.target.value); query({ engagement: e.target.value || undefined }) } },
-            h('option', { value: '' }, '全部来源靶标'),
-            (stats.byEngagement || []).map((e) => h('option', { key: e.engagement, value: e.engagement }, e.engagement + '（' + e.n + '）'))),
-          h('input', {
-            className: 'rt-input', style: { width: 120 }, placeholder: '发现资产筛选',
-            value: assetTarget, onChange: (e) => setAssetTarget(e.target.value),
-            onKeyDown: (e) => { if (e.key === 'Enter') query() },
-          }),
-          h('select', { className: 'rt-input', style: { maxWidth: 110 }, value: kind, onChange: (e) => { setKind(e.target.value); query({ kind: e.target.value || undefined }) } },
-            h('option', { value: '' }, '全部类型'),
-            Object.keys(POC_KIND_LABEL).map((k) => h('option', { key: k, value: k }, POC_KIND_LABEL[k]))),
-          h('label', { className: 'rt-kb-check' },
-            h('input', { type: 'checkbox', checked: verifiedOnly, onChange: (e) => { setVerifiedOnly(e.target.checked); query({ verified: e.target.checked || undefined }) } }),
-            '只看已验证'),
-          h('button', { className: 'rt-btn rt-btn-primary', onClick: () => query() }, '检索')),
-        msg ? h('div', { className: msg.err ? 'rt-err' : 'rt-foot' }, msg.err || msg.ok) : null,
-        err ? h('div', { className: 'rt-err' },
-          /engagement required|unknown op/i.test(err)
-            /* 老 host 还没有知识库接口：讲清怎么恢复，别让人对着 "engagement required" 发懵 */
-            ? '知识库接口由 host 侧提供，当前宿主还是旧进程 —— 请完全退出后重新打开（官方 exe / 社区版 / dsh web 任一），再刷新页面。'
-            : err) : null,
-        !err && data && data.dbPath
-          ? h('div', { className: 'rt-foot', style: { marginBottom: 6, fontSize: 11 } },
-              '知识库：' + data.dbPath
-              + (data.root ? '（根目录 ' + data.root + '）' : ''))
-          : null,
-        h('div', { className: 'rt-table' },
-          (() => {
-            if (!grouped) return items.map(card)
-            /* 分组渲染：按内置归类顺序，未知归类挂到末尾的「其它」 */
-            const buckets = new Map()
-            for (const x of items) {
-              const code = POC_CAT_NAME[x.category] ? x.category : 'other'
-              if (!buckets.has(code)) buckets.set(code, [])
-              buckets.get(code).push(x)
-            }
-            const order = POC_CAT_ORDER.filter((c) => buckets.has(c))
-            for (const code of buckets.keys()) if (!order.includes(code)) order.push(code)
-            const out = []
-            for (const code of order) {
-              const list = buckets.get(code)
-              out.push(h('div', { key: 'g' + code, className: 'rt-kb-cat' },
-                h('span', { className: 'rt-kb-cat-name' }, POC_CAT_NAME[code] || code),
-                h('span', { className: 'rt-tag' }, list.length + ' 条'),
-                h('span', { className: 'rt-tag rt-tag-live' }, '已验证 ' + list.filter((x) => x.verified === 1).length),
-                h('span', { className: 'rt-spacer' }),
-                h('span', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary)' } },
-                  '最近建立 ' + fmt(list.map((x) => x.created_at).filter(Boolean).sort().pop()))))
-              for (const x of list) out.push(card(x))
-            }
-            return out
-          })(),
-          tplItems.length
-            ? h('div', { className: 'rt-kb-tpl' },
-                h('div', { className: 'rt-ap-sub' },
-                  '本机 nuclei 模板 · ' + (tplStart + 1) + '–' + (tplStart + tplItems.length) + ' / ' + tplMatched
-                  + '（直接 `nuclei -t <模板路径>`）'),
-                tplItems.map((t, i) => h('div', { key: 't' + tplStart + '-' + i, className: 'rt-kb-tpl-row' },
-                  h('span', { className: 'rt-tag' }, t.severity || '—'),
-                  t.category ? h('span', { className: 'rt-tag' }, POC_CAT_NAME[t.category] || t.category) : null,
-                  h('span', { className: 'rt-mono rt-kb-tpl-path', title: t.path }, t.path),
-                  h('span', { className: 'rt-kb-tpl-name', title: t.name }, t.name || ''),
-                  h('button', {
-                    className: 'rt-btn', style: { padding: '0 6px', fontSize: 10.5 },
-                    onClick: () => copy('nuclei -t ' + t.path + ' -u <目标>', '模板命令'),
-                  }, '复制命令'))),
-                h('div', { className: 'rt-kb-actions' },
-                  h('button', {
-                    className: 'rt-btn', disabled: busy || tplStart <= 0,
-                    onClick: () => turnTpl(tplStart - tplPageSize),
-                  }, '上一页'),
-                  h('button', {
-                    className: 'rt-btn', disabled: busy || tplStart + tplItems.length >= tplMatched,
-                    onClick: () => turnTpl(tplStart + tplPageSize),
-                  }, '下一页')),
-                tpl.dir ? h('div', { className: 'rt-foot' }, h('span', null, '模板目录：' + tpl.dir)) : null)
-            : null,
-          data === null ? h('div', { className: 'rt-empty' }, '加载中…') : null,
-          data !== null && !items.length && !tplItems.length
-            ? h('div', { className: 'rt-empty' },
-                h('div', null,
-                  q || kind || verifiedOnly
-                    ? '没有命中：换个关键字再试，或去互联网找 / 自己手搓后回填。'
-                    : (tpl.total
-                      ? ('POC/EXP 库还是空的；本机已有 ' + tpl.total + ' 个 nuclei 模板，但这一页没有列出来。请完全退出后重新打开客户端。')
-                      : (tpl.dir
-                        ? '知识库还是空的（本机模板目录存在但没有 yaml，请跑 nuclei -update-templates）。'
-                        : '知识库还是空的。本机也还没有 nuclei 模板库 —— 在演练机上跑 setup.sh 或 `nuclei -update-templates`，装好后这里会出现「本机模板 N」。'))),
-                h('div', { style: { marginTop: 6, fontSize: 12 } },
-                  '打 Nday/1day 的标准顺序：① redteam_poc_search 先查这里（顺带搜本机 nuclei 模板库）→ ② 都没有就互联网搜索（web_search / GitHub / ExploitDB / 厂商公告）或自己手搓 → ③ 在真实目标上验证有效后 redteam_poc_add 回填，后面的靶标直接就能用。'),
-                data.dbPath ? h('div', { style: { marginTop: 6, fontSize: 11 }, className: 'rt-mono' }, '知识库文件：' + data.dbPath) : null,
-                tpl.dir ? h('div', { style: { marginTop: 6, fontSize: 11 }, className: 'rt-mono' }, '模板目录：' + tpl.dir) : null)
-            : null),
-        h('div', { className: 'rt-foot' },
-          h('span', null, '全局共享（跨靶标）｜ 落盘：pocs/<code>/ ｜ 只收录通用可复用的 POC/EXP，靶标专用脚本走「攻击文件」')))
-    }
 
     /* ---------------------------------------------------------- 环境适配（Windows / 非 Kali） */
     /**
@@ -7609,36 +6608,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
     }
 
     /* ---------------------------------------------------------- 入口按钮 */
-    function SidebarButton(props) {
-      const st = useUI()
-      return h('button', {
-        className: 'rt-icon-btn' + (st.open ? ' on' : ''),
-        title: 'RedTeam 控制台（常驻右侧栏）',
-        onClick: () => setUI({ open: !st.open }),
-      }, h('span', { style: { fontSize: 14 } }, '⛨'), props.wide ? h('span', null, 'RedTeam') : null)
-    }
-
-    function HeaderButton() {
-      const st = useUI()
-      return h('button', {
-        className: 'rt-hbtn' + (st.open ? ' on' : ''),
-        title: 'RedTeam 控制台（常驻右侧栏）',
-        onClick: () => setUI({ open: !st.open }),
-      }, '⛨ RedTeam')
-    }
-
     /** 侧栏「全面浏览」：在新浏览器窗口打开完整控制台（当前窗口不受影响）。 */
-    function FullButton(props) {
-      const open = () => {
-        try { window.open(window.location.href.split('#')[0] + '#redteam-full', '_blank', 'noopener') } catch { /* 被浏览器拦截 */ }
-      }
-      return h('button', {
-        className: 'rt-icon-btn',
-        title: '全面浏览：在新窗口打开完整控制台（当前窗口不受影响；新窗口内按 Esc 退出）',
-        onClick: open,
-      }, h('span', { style: { fontSize: 14 } }, '⛶'), props.wide ? h('span', null, '全面浏览') : null)
-    }
-
     /* ---------------------------------------------------------- 插件入口 */
     /** 唯一硬依赖：槽位注册表。 */
     const inject = ['slots']
@@ -7732,7 +6702,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 		}
 
 		let dockBus = { open: false, tab: "clean", authOpen: false, pending: "tab", listeners: new Set() };
-		function getDock() { return dockBus; }
 		function setDock(patch) {
 			dockBus = Object.assign({}, dockBus, patch);
 			dockBus.listeners.forEach((fn) => { try { fn(dockBus); } catch { /* ignore */ } });
@@ -7870,95 +6839,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 				}
 			} catch { /* ignore */ }
 			return node;
-		}
-
-		function AuthGate(props) {
-			const t = useT();
-			const [left, setLeft] = useState(10);
-			const [readEnd, setReadEnd] = useState(false);
-			const [checks, setChecks] = useState({ read: false, scope: false, ban: false });
-			const legalRef = useRef(null);
-			useEffect(() => {
-				const id = window.setInterval(() => {
-					setLeft((n) => {
-						if (n <= 1) { window.clearInterval(id); return 0; }
-						return n - 1;
-					});
-				}, 1000);
-				return () => window.clearInterval(id);
-			}, []);
-			useEffect(() => {
-				const el = legalRef.current;
-				if (!el) return;
-				if (el.scrollHeight <= el.clientHeight + 4) setReadEnd(true);
-			}, []);
-			const locked = left > 0 || !readEnd;
-			const ready = !locked && checks.read && checks.scope && checks.ban;
-			const hint = left > 0
-				? t("auth.hint.wait").replace("{n}", String(left))
-				: (readEnd ? t("auth.hint.check") : t("auth.hint.scroll"));
-			const onScroll = () => {
-				const el = legalRef.current;
-				if (!el) return;
-				if (el.scrollTop + el.clientHeight >= el.scrollHeight - 8) setReadEnd(true);
-			};
-			const toggle = (id) => {
-				if (locked) return;
-				setChecks((prev) => Object.assign({}, prev, { [id]: !prev[id] }));
-			};
-			const okLabel = !ready
-				? t("auth.ok")
-				: (props.pending === "full"
-					? t("auth.ok.full")
-					: (props.pending === "env" ? t("auth.ok.env") : t("auth.ok.tab")));
-			return h("div", { className: "dshp-auth-mask", role: "dialog", "aria-modal": "true" },
-				h("div", { className: "dshp-auth-modal" },
-					h("h2", null, t("auth.title")),
-					h("div", { className: "muted", style: { color: "var(--dsw-alias-label-secondary,#999)", fontSize: 12 } }, t("auth.lead")),
-					h("div", { className: "dshp-auth-warn" }, t("auth.warn")),
-					h("div", {
-						className: "dshp-auth-legal",
-						ref: legalRef,
-						onScroll,
-						dangerouslySetInnerHTML: { __html: AUTH_LEGAL_HTML },
-					}),
-					h("div", { style: { color: "var(--dsw-alias-label-secondary,#999)", fontSize: 12 } }, hint),
-					h("div", { className: "dshp-auth-checks" },
-						[["read", "auth.check.read"], ["scope", "auth.check.scope"], ["ban", "auth.check.ban"]].map((row) =>
-							h("label", { key: row[0], className: locked ? "locked" : "" },
-								h("input", {
-									type: "checkbox",
-									checked: !!checks[row[0]],
-									disabled: locked,
-									onChange: () => toggle(row[0]),
-								}),
-								h("span", null, t(row[1])),
-							),
-						),
-					),
-					h("div", { className: "dshp-auth-ops" },
-						h("button", { type: "button", onClick: () => setDock({ authOpen: false, tab: "clean", pending: "tab" }) }, t("auth.no")),
-						h("button", {
-							type: "button",
-							className: "primary",
-							disabled: !ready,
-							onClick: () => {
-								if (!ready) return;
-								writeDrillAuth(true);
-								const kind = props.pending || "tab";
-								setDock({ authOpen: false, open: true, tab: "drill", pending: "tab" });
-								try { if (__dshPurgeDrill && __dshPurgeDrill.setUI) __dshPurgeDrill.setUI({ open: true }); } catch { /* ignore */ }
-								if (kind === "env") {
-									try { if (__dshPurgeDrill && __dshPurgeDrill.setUI) __dshPurgeDrill.setUI({ open: true, tab: "env" }); } catch { /* ignore */ }
-								}
-								if (kind === "full") {
-									try { window.open(window.location.href.split("#")[0] + "#redteam-full", "_blank", "noopener"); } catch { /* ignore */ }
-								}
-							},
-						}, okLabel),
-					),
-				),
-			);
 		}
 
 		function isRedteamPresetId(value) {
@@ -8115,8 +6995,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 		/** 同步探测的占位：不再做同步 XHR（会卡 UI 主线程、Chrome 已逐步弃用）。
 		 * 调用方 mustBlockSubmit 在 cache 过期/缺失时按"未知→保守 block"处理,
 		 * 同时 EnvAdaptSendGate 的 useEffect 轮询会异步 refresh,下次调用即可放行。 */
-		function fetchEnvAdaptStatusSync() { return null; }
-
 		/** 红队发送前门禁：未就绪 → 授权并打开环境适配；可确认跳过。 */
 		function EnvAdaptSendGate() {
 			const t = useT();
@@ -8251,7 +7129,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 				h("div", { className: "dshp-auth-modal", style: { width: "min(480px,100%)" } },
 					h("h2", null, t("envGate.title")),
 					h("div", { style: { fontSize: 13, lineHeight: 1.55 } }, message),
-					h("div", { style: { fontSize: 12, color: "var(--dsw-alias-label-secondary,#999)", lineHeight: 1.5 } }, t("envGate.kaliHint")),
 					confirmSkip
 						? h("div", { className: "dshp-auth-warn" }, t("envGate.skipConfirm"))
 						: null,

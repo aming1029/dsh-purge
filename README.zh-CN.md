@@ -477,6 +477,22 @@ DSH 会按顺序执行同一批中的 Bash 调用。旧版 dsh-purge 把默认�
 
 ---
 
+## 提示词库（本分支新增）
+
+把原来的「提示词框 + 规则集」统一成一份提示词库：
+
+- **多份提示词**：新建 / 编辑 / 改名 / 删除，点「应用」当场生效（不等重启、不等定时任务）。
+- **默认提示词**：没有任何条目被应用时用它，同样可编辑、界面可见。
+- **DSH 官方默认提示词**：只读条目，点「应用」= 清空注入（`prompt-inject.md` 清空 + 删除 `AGENTS.md`），回到宿主自己的系统提示词。
+- **双通道落盘**：system 层写 `$DSH_HOME/prompt-inject.md`，workspace 层镜像到 `$DSH_HOME/AGENTS.md`；后者能穿透会重写 `system` 字段的中转网关。
+
+面板入口：侧栏 `dsh-purge` 页签；独立页面：`http://127.0.0.1:<端口>/dsh-purge/prompts/ui`。
+设计与接口细节见 [docs/prompts-library.md](docs/prompts-library.md)。
+
+```bash
+node tests/prompts-lib.test.mjs   # 33 项断言，使用临时 home，不动真实配置
+```
+
 ## 本地校验
 
 ```sh

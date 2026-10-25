@@ -32,3 +32,7 @@ default-prompt-inject.md
 /official-harness-payload.7z
 *.asar
 *.asar.bak
+
+# 打补丁 / 改代码时留下的本机备份
+*.bak
+*.dshpurge.bak
