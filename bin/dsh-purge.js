@@ -61,8 +61,7 @@ async function main() {
     }
     const inject = rules.resolveInjectText(state.dsh_home);
     if (!inject.text) {
-      console.log("[ERROR] 提示词和规则集都是空的，必须先添加提示词");
-      process.exit(1);
+      console.log("[prompt-sync:noprompt] 提示词为空 -> 使用 DSH 官方默认提示词");
     }
     const { hosts, report } = await core.applyPatchesAllHosts(core.ALL_PATCHES, {
       preserveClientBundles: false,

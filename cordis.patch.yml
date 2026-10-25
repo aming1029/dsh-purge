@@ -52,17 +52,9 @@
     capabilityProtocol: true
     hooksDenyBypass: true
 
-- insert:
-    # 演练台：预设 + 技能落地（本插件 lib/redteam）
-    - id: dsh-purge-redteam
-      name: dsh-purge/redteam
-
-    # 演练台事实库（SQLite），数据在 $DSH_HOME/redteam
-    - id: dsh-purge-redteam-store
-      name: dsh-purge/redteam/store
-      config:
-        root: !!js dshHomePath('redteam')
-
-    # 演练台 HTTP 桥 POST /redteam/api
-    - id: dsh-purge-redteam-ui
-      name: dsh-purge/redteam/ui
+# [prompt-sync] redteam entries removed
+# 原三条 insert 已删除：
+#   - id: dsh-purge-redteam        (name: dsh-purge/redteam)        演练台预设/技能自举
+#   - id: dsh-purge-redteam-store  (name: dsh-purge/redteam/store)  演练台事实库 SQLite
+#   - id: dsh-purge-redteam-ui     (name: dsh-purge/redteam/ui)     POST /redteam/api
+# 结果：不注册 redteam_* 工具、不生成「红队模式」预设、/redteam/api 消失。

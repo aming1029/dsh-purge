@@ -84,7 +84,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 		}
 
 		function responseNeedsPrompt(d) {
-			return Boolean(d && (d.needPrompt || d.injectSource === "none"));
+			return false; // [prompt-sync:noprompt] 面板不再弹「提示词和规则集都是空的」
 		}
 
 		function warnNeedPrompt(d, tr) {
@@ -139,7 +139,7 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"welcome.title": "用户须知",
 			"welcome.lead": "首次安装本插件时请阅读以下说明。确认后本窗不再弹出。",
 			"welcome.warn": "本插件免费开源。任何背着作者私自售卖、付费倒卖或借本项目盈利的行为，作者将依法追究法律责任。",
-			"welcome.body": "dsh-purge 是 DeepSeek Harness 的本机网络安全红队评测与清洗插件：在受控本机环境中调整提示词与补丁、做授权范围内的演练台操作。项目免费、非营利，源码仓库：",
+			"welcome.body": "dsh-purge 是 DeepSeek Harness 的本机提示词与补丁管理插件：在受控本机环境中调整提示词与补丁。项目免费、非营利，源码仓库：",
 			"welcome.repo": "https://github.com/YuJunZhiXue/dsh-purge",
 			"welcome.ban1": "禁止将本项目用于未授权的网络攻击、入侵、窃取数据、破坏系统或任何违法犯罪。",
 			"welcome.ban2": "禁止商业售卖、付费倒卖、黑灰产牟利，以及隐瞒作者的营利性再分发。",
@@ -2028,26 +2028,16 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 				h("div", { className: "dshp-sub" },
 					h("h4", null, t("override.title")),
 					h("div", { className: "dshp-row", style: { margin: 0 } },
-						h(Btn, { kind: "primary", tiny: true, disabled: patchBusy || !overrideLoaded, onClick: saveOverride }, t("btn.saveInject")),
-						h(Btn, { tiny: true, disabled: patchBusy || !overrideLoaded || !defaultOverride, onClick: restoreOverride }, t("btn.restoreInject")),
+						h(Btn, { tiny: true, onClick: () => { try { const f = document.querySelector('iframe[data-promptlib="1"]'); if (f) f.src = "/dsh-purge/prompts/ui?t=" + Date.now(); } catch { /* ignore */ } } }, "刷新"),
+						h(Btn, { tiny: true, onClick: () => { try { window.open("/dsh-purge/prompts/ui", "_blank"); } catch { /* ignore */ } } }, "独立窗口"),
 					),
 				),
-				h("textarea", {
-					className: "dshp-area",
-					ref: promptAreaRef,
-					value: override,
-					onChange: (e) => {
-						promptDirtyRef.current = true;
-						overrideRef.current = e.target.value;
-						setOverride(e.target.value);
-					},
-					spellCheck: false,
-					placeholder: "",
+				h("iframe", {
+					"data-promptlib": "1",
+					src: "/dsh-purge/prompts/ui",
+					title: "提示词库",
+					style: { width: "100%", height: 560, border: 0, borderRadius: 10, display: "block" },
 				}),
-				promptBoxEmpty(override) ? h("p", {
-					className: "dshp-hint",
-					style: { margin: "8px 0 0", color: "var(--dshp-danger, #c44)", fontSize: 12 },
-				}, t("need.prompt")) : null,
 				h("div", { className: "dshp-sub" },
 					h("h4", null, t("own.title")),
 				),
@@ -2838,7 +2828,6 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 			return h("div", { className: "dshp-root", "data-theme": theme },
 				h("style", null, PURGE_CSS),
 				h(PurgifySection, null),
-				h(RulesSection, null),
 			);
 		}
 
@@ -7659,7 +7648,8 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
      * @param ctx - 客户端根上下文。
      */
     function applyDrillParts() {
-      return { CSS: CSS, Panel: Panel, setUI: setUI, useUI: useUI, isFullWindow: isFullWindow, setDockWidth: setDockWidth };
+      /* [noredteam] 演练台已整体移除：对外只留空壳，任何调用都不会挂载 UI */
+      return { CSS: "", Panel: function () { return null; }, setUI: function () {}, useUI: useUI, isFullWindow: function () { return false; }, setDockWidth: function () {} };
     }
 
     exports.inject = inject
@@ -8341,7 +8331,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 					uiTag.textContent = PURGE_CSS;
 					document.head.append(uiTag);
 				}
-				if (!__dshPurgeDrill || !__dshPurgeDrill.CSS) return undefined;
+				/* [noredteam] 不再注入演练台样式（保留下方宽度变量） */ if (false) return undefined;
 				const styleTag = document.createElement("style");
 				styleTag.setAttribute("data-dsh-purge-drill", "1");
 				styleTag.textContent = __dshPurgeDrill.CSS;
@@ -8368,7 +8358,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 				}
 			}, [st.tab, st.open]);
 			const onTab = (id) => {
-				if (id === "drill") { requestDrill("tab"); return; }
+				if (id === "drill") { /* [noredteam] 演练台页签已移除 */ return; }
 				setDock({ tab: "clean", authOpen: false, pending: "tab" });
 			};
 			const startDrag = (e) => {
@@ -8449,11 +8439,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 				window.addEventListener("mousemove", move);
 				window.addEventListener("mouseup", up);
 			};
-			const body = st.tab === "clean"
-				? h(SettingsRoot, { t })
-				: (readDrillAuth() && __dshPurgeDrill.Panel
-					? h(__dshPurgeDrill.Panel, { embedded: true })
-					: h("div", { style: { padding: 16, color: "var(--dsw-alias-label-secondary)" } }, t("dock.unauthorized")));
+			const body = h(SettingsRoot, { t }); /* [prompt-sync] drill page removed */
 			const panel = h("div", {
 				className: "dshp-dock",
 				"data-theme": dockTheme === "white" ? "white" : "dusk",
@@ -8470,9 +8456,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 				h("div", { className: "dshp-dock-head", onMouseDown: startDrag, title: "Drag to move the panel" },
 					h("b", null, "dsh-purge"),
 					h("span", { style: { flex: 1 } }),
-					st.tab === "drill" && readDrillAuth()
-						? h("button", { type: "button", onClick: () => requestDrill("full") }, t("dock.full"))
-						: null,
 					h("button", { type: "button", onClick: () => setDock({ open: false, authOpen: false, tab: "clean", pending: "tab" }) }, t("dock.close")),
 				),
 				h("div", { className: "dshp-dock-tabs", role: "tablist" },
@@ -8483,13 +8466,6 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 						"aria-selected": st.tab === "clean" ? "true" : "false",
 						onClick: () => onTab("clean"),
 					}, t("dock.clean")),
-					h("button", {
-						type: "button",
-						className: "dshp-dock-tab" + (st.tab === "drill" ? " on" : ""),
-						role: "tab",
-						"aria-selected": st.tab === "drill" ? "true" : "false",
-						onClick: () => onTab("drill"),
-					}, t("dock.drill") + (readDrillAuth() ? "" : " · " + t("dock.unauthorized"))),
 				),
 				h("div", { className: "dshp-dock-body" }, body),
 				h("div", { className: "dshp-dock-resize-l", title: "Drag to resize width", onMouseDown: startResizeLeft }),
@@ -8499,7 +8475,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 			);
 			let portal = null;
 			let authPortal = null;
-			const authNode = st.authOpen ? h(AuthGate, { pending: st.pending }) : null;
+			const authNode = null; /* [noredteam] 演练台授权门禁已移除 */
 			try {
 				const rd = require("react-dom");
 				if (rd && typeof rd.createPortal === "function" && typeof document !== "undefined" && document.body) {
@@ -8760,7 +8736,7 @@ body[data-ds-dark-theme] .dshp-rewind-item span{color:var(--dsw-alias-label-tert
 				name: "shell.overlay",
 				id: "dsh-purge-dock",
 				order: 50,
-			}, () => h(react.Fragment, null, h(WelcomeNotice), h(PurgeLauncher), h(PurgeDock), h(HeroNewSessionMount), h(TabRowPurgeMount), h(EnvAdaptSendGate))));
+			}, () => h(react.Fragment, null, h(WelcomeNotice), h(PurgeLauncher), h(PurgeDock), h(HeroNewSessionMount), h(TabRowPurgeMount), null /* [prompt-sync] drill gate removed */)));
 			try {
 				if (typeof ctx.inject === "function") {
 					ctx.inject(["sessions", "uiWorkspace", "workspaces", "conversation"], (host) => installRewindUi(host));
